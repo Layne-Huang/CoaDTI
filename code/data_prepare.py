@@ -50,7 +50,7 @@ def create_atoms(mol):
     """Create a list of atom (e.g., hydrogen and oxygen) IDs
     considering the aromaticity."""
 
-    # GetSymbol 获取分子的元素符号
+    # GetSymbol: obtain the symbol of the atom
     atoms = [a.GetSymbol() for a in mol.GetAtoms()]
     for a in mol.GetAromaticAtoms():
         i = a.GetIdx()
@@ -198,14 +198,14 @@ if __name__ == "__main__":
 
     if pre_split:
         with open('../dataset/' + DATASET + '/original/train.txt', 'r') as f:
-            data_list_train = f.read().strip().split('\n')  # strip去除首尾空格
+            data_list_train = f.read().strip().split('\n')  # strip: remove the space of the head and the tail
         with open('../dataset/' + DATASET + '/original/dev.txt', 'r') as f:
-            data_list_dev = f.read().strip().split('\n')  # strip去除首尾空格
+            data_list_dev = f.read().strip().split('\n')  
         with open('../dataset/' + DATASET + '/original/test.txt', 'r') as f:
-            data_list_test = f.read().strip().split('\n')  # strip去除首尾空格
+            data_list_test = f.read().strip().split('\n')  
     else:
         with open('../dataset/' + DATASET + '/original/data.txt', 'r') as f:
-            data_list = f.read().strip().split('\n') # strip去除首尾空格
+            data_list = f.read().strip().split('\n') 
 
     """Exclude data contains '.' in the SMILES format."""
 
